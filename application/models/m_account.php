@@ -31,8 +31,6 @@ class m_account extends CI_Model{
 		return $this->db->update('user', $data);
 	}
     public function get_profile($username){
-		//select 1 row profile based on username (from param) and return it, if the data is not found then return false
-		//delete if not necessary, it's just there to prevent error
 		if($this->db->where('username', $username)){
 			return $this->db->get('user')->row_array();
 		}else{
@@ -50,10 +48,16 @@ class m_account extends CI_Model{
 	}
 	public function tf_saldo($username,$data)
 	{	
+		return $this->db->query("UPDATE user SET saldo= saldo + $data WHERE username='$username'");
+	}
+
+	public function change_password($username,$data)
+	{
 		$data = [
-			"saldo" => "saldo" + $this->input->post('saldo', true),
-		];
+			"password" => $this->input->post('passbaru', true),
+         ];
 		$this->db->where('username', $username);
 		return $this->db->update('user', $data);
 	}
+	
 }

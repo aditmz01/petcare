@@ -107,26 +107,35 @@ public function editmakanan()
 
    public function transfersaldo()
 	{
-      $ceksaldo = $this->m_account->get_profile($_SESSION['username']);
-		$data = [
-         'username' => $this->input->post('username', true),
-         'saldo' => $this->input->post('saldo',true)
-     ];
-         if ($ceksaldo['saldo'] < $data['saldo']){
-            $data['error_message'] = "Saldo Anda tidak Mencukupi";
-            $this->load->view('template/navbar_after_login');
-            $this->load->view('temlate/v_tfsaldo',$data);
-         } else if($data['saldo'] < 10000){
-            $data['error_message'] = "Minimum Transfer Saldo adalah 10.000";
-            $this->load->view('template/navbar_after_login');
-            $this->load->view('temlate/v_tfsaldo',$data);
-         } else if ($this->m_account->tf_saldo($this->input->post('username'), $data)){
-            $data['success'] = "Transfer Saldo Berhasil";
-            $this->load->view('template/navbar_after_login');
-            $this->load->view('temlate/v_tfsaldo',$data);
-         }
-        
-        redirect('home/makanan','refresh');
+      $username = $_SESSION['username'];
+      $tujuan = $this->input->post('tujuan', true);
+      $jumlah = $this->input->post('jumlah', true);
+      $cek_akun = $this->m_account->get_profile($_SESSION['username']);
+      //cek apakah username tujuan ada
+      $cek_tujuan = $this->m_account->get_profile($tujuan);
+      
+      if(!$cek_tujuan){                                    // Jika Akun tujuan tidak ditemukan
+         $data['error_message'] = '<b>Gagal ! </b> Username Tujuan tidak ditemukan';
+         $this->load->view('template/navbar_after_login');
+         $this->load->view('template/v_tfsaldo',$data);     
+      } else if ($cek_akun['saldo'] < $jumlah){            // jika saldo akun tidak mencukupi
+         $data['error_message'] = '<b>Gagal ! </b>Saldo Anda Tidak Mencukup';
+         $this->load->view('template/navbar_after_login');
+         $this->load->view('template/v_tfsaldo',$data);
+      } else if($jumlah < 10000){                   //Jika Nominal TF kurang dari 10.000
+         $data['error_message'] = "<b>Gagal ! </b>Minimum Transfer Saldo adalah 10.000";
+         $this->load->view('template/navbar_after_login');
+         $this->load->view('template/v_tfsaldo',$data);
+      }  else if ($this->m_account->tf_saldo($tujuan, $jumlah)){
+         $this->db->query("UPDATE user SET saldo= saldo - $jumlah WHERE username='$username'");
+         $data['success'] = "Transfer Saldo Berhasil";
+         $this->load->view('template/navbar_after_login');
+         $this->load->view('template/v_tfsaldo',$data);
+      }
+   }
+   public function change_password(){
+         $this->load->view('template/navbar_after_login');
+         $this->load->view('template/v_changepassword');   
    }
 }
 

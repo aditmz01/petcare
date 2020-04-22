@@ -30,11 +30,11 @@ class Register extends CI_Controller {
     }
     if($cekuser) {
       $this->m_account->insert_user($data);
-      $data['success'] = 'Register New Account Success';
+      $data['success'] = 'Register New Account <b>Success !</b>';
       $this->load->view('template/navbar_before_login');
       $this->load->view('template/v_register',$data); 
   } else {
-    $data['error_message'] = 'Username already exist';
+    $data['error_message'] = '<b>Gagal ! </b>Username already exist';
     $this->load->view('template/navbar_before_login');
     $this->load->view('template/v_register',$data); 
    }

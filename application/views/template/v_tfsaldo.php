@@ -31,6 +31,7 @@
     .panel-body{
         padding : 20px;
         color : black;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 </style>
 <body>
@@ -42,9 +43,20 @@
         <div class="panel panel-default">
             <div class="panel-heading">TRANSFER SALDO | PETCARE GROUPS</div>
                 <div class="panel-body">
+                <?php if(isset($error_message)) { ?>
+                        <div class="alert alert-danger" role="alert">
+                            <?= $error_message ?>
+                        </div>
+                <?php } ?>
+                <?php if(isset($success)) { ?>
+                            <div class="alert alert-success" role="alert">
+                                <?= $success ?>
+                            </div>
+                <?php } ?>
+                <form method="post" action="<?php echo base_url('home/transfersaldo'); ?>">
                     <div class="form-group">
                             <label for="formGroupExampleInput">Username</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Transfer Saldo Ke" name="username" required >
+                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Transfer Saldo Ke" name="tujuan" required >
                         </div>
                         <div class="form-group">
                             <label for="formGroupExampleInput">Jumlah</label>
@@ -54,6 +66,7 @@
                             <input type="submit" class="btn btn-primary btn-right" value="Transfer" placeholder="Simpan">
                         </div>
                     </div>
+                </form>
                 </div>
             </div>
         </div>

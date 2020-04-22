@@ -46,7 +46,7 @@
                         ASAL  : BENGKULU<br>
                     </div>
                     <div class="card-footer">
-                        <a href="https://www.malasngoding.com/card-bootstrap-4/" class="card-link"><center>Administrator</center></a>
+                        <a href="#" class="card-link"><center>Administrator</center></a>
                     </div>
             </div>
         
@@ -61,7 +61,7 @@
                         ASAL  : SLEMAN<br>
                     </div>
                     <div class="card-footer">
-                        <a href="https://www.malasngoding.com/card-bootstrap-4/" class="card-link"><center>Administrator</center></a>
+                        <a href="#" class="card-link"><center>Administrator</center></a>
                     </div>
             </div>
         <!-- </div>     -->
@@ -75,7 +75,7 @@
                         ASAL  : FLORES<br>
                     </div>
                     <div class="card-footer">
-                        <a href="https://www.malasngoding.com/card-bootstrap-4/" class="card-link"><center>Administrator</center></a>
+                        <a href="#" class="card-link"><center>Administrator</center></a>
                     </div>
             </div>
         <!-- </div>     -->
