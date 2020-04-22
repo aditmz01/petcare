@@ -1,0 +1,60 @@
+    .navbar{
+        background-color: black;
+        height : 100%;
+        width : 100%;
+    }
+    #navbar_name{
+        display : inline;
+    }
+    .navbar-inverse{
+        margin-bottom: 0;
+    }
+    
+    li{
+        padding : 10px;
+        color : white;
+    }
+    ul li {
+        display: inline;
+    }
+    ul li a{
+        font-weight: bolder;
+        color: #FFFF;   
+    }
+    ul li a:hover{
+        font-weight: bolder;
+        color: #FFFF;   
+    }
+    #home{
+        background-color: #006FFF;  
+    }
+    .menu{
+    border-width:1px 0;
+    list-style:none;
+    margin:0;
+    padding:10;
+    text-align:right;
+    }
+    .menu li{
+        display:inline;
+    }
+    .menu a{
+        display:inline-block;
+        padding:10px;
+        color:black;
+    }
+    .menu ul li a:after{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 0%;
+        content: '.';
+        color: transparent;
+        background: #aaa;
+        height: 1px;
+    }
+    .menu ul li a:hover:after {
+        width: 100%;
+    }
