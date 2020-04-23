@@ -29,6 +29,7 @@
     <div class="content">
         <a class="btn btn-primary" href="<?= base_url('home/obat')?>"><font color="white"><b>OBAT</b></font-color></a>
         <a class="btn btn-primary" href="<?= base_url('home/makanan')?>"><font color="white"><b>MAKANAN</b></font-color></a>
+        <a class="btn btn-primary" href="#"><font color="white"><b>HISTORY TRANSAKSI</b></font-color></a>
         <a class="btn btn-primary" href="<?= base_url('home/tfsaldo')?>"><font color="white"><b>TRANSER SALDO</b></font-color></a>
         
         <div class="panel panel-default">
@@ -74,29 +75,29 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                    <h2><center>TAMBAH DATA OBAT</center></h2>
+                    <center><h2><font color="black">TAMBAH DATA OBAT</font></h2></center>
                     </div>
                 <div class="modal-body">
                     <!-- isi form ini -->
                     <form method="POST" action="<?php echo base_url('home/tambahobat'); ?>">
                         <div class="form-group">
-                            <label for="formGroupExampleInput">Nama Obat</label>
+                            <label for="formGroupExampleInput"><font color="black">Nama Obat</font></label>
                             <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nama Obat" name="nama_obat" required >
                         </div>
                         <div class="form-group">
-                            <label for="formGroupExampleInput">Deskripsi Obat</label>
+                            <label for="formGroupExampleInput"><font color="black">Deskripsi Obat</font></label>
                             <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Deskripsi Obat" name="deskripsi"required>
                         </div>
                         <div class="form-group">
-                            <label for="formGroupExampleInput2">Stok Obat</label>
+                            <label for="formGroupExampleInput2"><font color="black">Stok Obat</font></label>
                             <input type="number" class="form-control" id="formGroupExampleInput2" placeholder="Stok Obat" name="stok_obat" required>
                         </div>
                         <div class="form-group">
-                            <label for="formGroupExampleInput2">Harga</label>
+                            <label for="formGroupExampleInput2"><font color="black">Harga</font></label>
                             <input type="number" class="form-control" id="formGroupExampleInput2" placeholder="Harga Obat" name="harga" required>
                         </div>
                         <div class="form-group">
-                            <label for="formGroupExampleInput2">Obat Untuk</label>
+                            <label for="formGroupExampleInput2"><font color="black">Obat Untuk</font></label>
                             <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Obat Untuk" name="untuk" required>
                         </div>
                     </div>
@@ -113,30 +114,30 @@
         <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-            <center><h2>EDIT DATA OBAT <?php echo $d->nama_obat ?> </h2></center>
+            <center><h2><font color="black">EDIT DATA OBAT <?php echo $d->nama_obat ?> </font></h2></center>
             </div>
             <div class="modal-body">
             <!-- isi form ini -->
             <form method="post" action="<?php echo base_url('home/editobat') ?>">
             <input type="hidden" class="form-control" id="formGroupExampleInput" placeholder="id_obat" name="id_obat" value="<?php echo $d->id_obat ?>"  required>
             <div class="form-group">
-            <label for="formGroupExampleInput">Nama Obat</label>
+            <label for="formGroupExampleInput"><font color="black">Nama Obat</font></label>
             <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nama Obat" name="nama_obat" value="<?php echo $d->nama_obat ?>" required >
             </div>
             <div class="form-group">
-            <label for="formGroupExampleInput">Deskripsi</label>
+            <label for="formGroupExampleInput"><font color="black">Deskripsi</font></label>
             <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Deskripsi" name="deskripsi" value="<?php echo $d->deskripsi ?>"required>
             </div>
             <div class="form-group">
-            <label for="formGroupExampleInput2">Stok Obat</label>
+            <label for="formGroupExampleInput2"><font color="black">Stok Obat</font></label>
             <input type="number" class="form-control" id="formGroupExampleInput2" placeholder="Stok Obat" name="stok_obat" value="<?php echo $d->stok_obat ?>" required>
             </div>
             <div class="form-group">
-            <label for="formGroupExampleInput2">Harga Obat</label>
+            <label for="formGroupExampleInput2"><font color="black">Harga Obat</font></label>
             <input type="number" class="form-control" id="formGroupExampleInput2" placeholder="Harga Obat" name="harga" value="<?php echo $d->harga ?>" required>
             </div>
             <div class="form-group">
-            <label for="formGroupExampleInput2">Obat Untuk</label>
+            <label for="formGroupExampleInput2"><font color="black">Obat Untuk</font></label>
             <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Obat Untuk" name="untuk" value="<?php echo $d->untuk ?>" required>
             </div>
             </div>
@@ -155,5 +156,5 @@
     $(document).ready(function() {
       $('#table').DataTable();
     });
-                </script>
+</script>
   </script>

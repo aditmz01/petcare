@@ -15,8 +15,7 @@
         width: 700px;
         margin-left: auto;
         margin-right: auto;
-        border : 1px grey;
-        box-shadow: 1px 2px 1px 2px;
+        border : 2px solid black;
         border-radius : 10px;
 
     }

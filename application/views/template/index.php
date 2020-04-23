@@ -1,6 +1,6 @@
 <head>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
   <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
@@ -55,15 +55,50 @@
     tr td{
         padding: 10px;
     }
+    #tfsaldo{
+        display: inline-block
+    }
+    .dropdown {
+        color: white;
+        position: relative;
+        display: inline-block;
+    }
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #FFF;
+        min-width: 160px;
+        box-shadow: 0px 4px 8px 0px rgba(34, 49, 63, 1);
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-weight: bolder;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #000;
+        color : white;
+        font-weight: bolder;
+    }
+
+    .dropdown:hover .dropdown-content {display: block;}
+
 </style>
 <body>
     <div class="content">
-        
-        <a class="btn btn-primary" href="<?= base_url('home/obat')?>"><font color="white"><b>OBAT</b></font-color></a>
-        <a class="btn btn-primary" href="<?= base_url('home/makanan')?>"><font color="white"><b>MAKANAN</b></font-color></a>
+        <div class="dropdown">
+            <a class="btn btn-primary" id ="dropbtn"><font color="white"><b>ORDER</b></font-color></a>
+            <div class="dropdown-content">
+                <a href="<?= base_url('order/obat')?>">Obat Hewan</a>
+                <a href="<?= base_url('order/makanan')?>">Makanan Hewan</a>
+            </div>
+        </div>
+        <a class="btn btn-primary" id="tfsaldo" href="<?= base_url('home/tfsaldo')?>"><font color="white"><b>TRANSER SALDO</b></font-color></a>
         <a class="btn btn-primary" href="#"><font color="white"><b>HISTORY TRANSAKSI</b></font-color></a>
-        <a class="btn btn-primary" href="<?= base_url('home/tfsaldo')?>"><font color="white"><b>TRANSER SALDO</b></font-color></a>
-
         <div class="infoakun">
             <div class="infoakun-heading">
                 Selamat Datang di PETCARE | GROUPS
@@ -103,12 +138,11 @@
     </div>
 
 <script>
-        // $(document).ready(function(){
-        // $("#tfsaldo").click(function(){
-        //     $("#div1").fadeIn("slow");
-        //     // $("#div2").fadeIn("slow");
-        //     // $("#div3").fadeIn(3000);
-        // });
-        // });
+ $(document).ready(function(){
+  $("btnOrder").click(function(){
+    $("#obat").fadeIn("slow");
+    $("#makanan").fadeIn("slow");
+  });
+});
 </script>
 </body>

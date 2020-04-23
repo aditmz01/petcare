@@ -29,6 +29,7 @@
     <div class="content">
         <a class="btn btn-primary" href="<?= base_url('home/obat')?>"><font color="white"><b>OBAT</b></font-color></a>
         <a class="btn btn-primary" href="<?= base_url('home/makanan')?>"><font color="white"><b>MAKANAN</b></font-color></a>
+        <a class="btn btn-primary" href="#"><font color="white"><b>HISTORY TRANSAKSI</b></font-color></a>
         <a class="btn btn-primary" href="<?= base_url('home/tfsaldo')?>"><font color="white"><b>TRANSER SALDO</b></font-color></a>
         
         <div class="panel panel-default">
@@ -72,25 +73,25 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                    <h2><center>TAMBAH DATA MAKANAN</center></h2>
+                    <h2><center><font color="black">TAMBAH DATA MAKANAN</font></center></h2>
                     </div>
                 <div class="modal-body">
                     <!-- isi form ini -->
                     <form method="POST" action="<?php echo base_url('home/tambahmakanan'); ?>">
                         <div class="form-group">
-                            <label for="formGroupExampleInput">Nama Makanan</label>
+                            <label for="formGroupExampleInput"><font color="black">Nama Makanan</font></label>
                             <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nama Makanan" name="nama_makanan" required >
                         </div>
                         <div class="form-group">
-                            <label for="formGroupExampleInput">Rasa</label>
+                            <label for="formGroupExampleInput"><font color="black">Rasa</font></label>
                             <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Rasa" name="rasa"required>
                         </div>
                         <div class="form-group">
-                            <label for="formGroupExampleInput2">Harga</label>
+                            <label for="formGroupExampleInput2"><font color="black">Harga</font></label>
                             <input type="number" class="form-control" id="formGroupExampleInput2" placeholder="Harga Makanan" name="harga" required>
                         </div>
                         <div class="form-group">
-                            <label for="formGroupExampleInput2">Makanan Untuk</label>
+                            <label for="formGroupExampleInput2"><font color="black">Makanan Untuk</font></label>
                             <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Makanan Untuk" name="untuk" required>
                         </div>
                     </div>
@@ -107,26 +108,26 @@
         <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-            <center><h2>EDIT DATA <?php echo $d->nama_makanan ?> </h2></center>
+            <center><h2><font color="black">EDIT DATA <?php echo $d->nama_makanan ?> </font></h2></center>
             </div>
             <div class="modal-body">
             <!-- isi form ini -->
             <form method="post" action="<?php echo base_url('home/editmakanan') ?>">
             <input type="hidden" class="form-control" id="formGroupExampleInput" placeholder="id_makanan" name="id_makanan" value="<?php echo $d->id_makanan ?>"  required>
             <div class="form-group">
-            <label for="formGroupExampleInput">Nama Makanan</label>
+            <label for="formGroupExampleInput"><font color="black">Nama Makanan</font></label>
             <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nama Makanan" name="nama_makanan" value="<?php echo $d->nama_makanan ?>" required >
             </div>
             <div class="form-group">
-            <label for="formGroupExampleInput">Rasa</label>
+            <label for="formGroupExampleInput"><font color="black">Rasa</font></label>
             <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Rasa" name="rasa" value="<?php echo $d->rasa ?>"required>
             </div>
             <div class="form-group">
-            <label for="formGroupExampleInput2">Harga Makanan</label>
+            <label for="formGroupExampleInput2"><font color="black">Harga Makanan</font></label>
             <input type="number" class="form-control" id="formGroupExampleInput2" placeholder="Harga Makanan" name="harga" value="<?php echo $d->harga ?>" required>
             </div>
             <div class="form-group">
-            <label for="formGroupExampleInput2">Makanan Untuk</label>
+            <label for="formGroupExampleInput2"><font color="black">Makanan Untuk</font></label>
             <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Makanan Untuk" name="untuk" value="<?php echo $d->untuk ?>" required>
             </div>
             </div>

@@ -13,8 +13,14 @@ class Home extends CI_Controller {
  
  public function index()
  {
-  $this->load->view('template/navbar_after_login');
-  $this->load->view('home'); 
+   $data = $this->m_account->get_profile($_SESSION['username']);
+   if($data['level'] == 'Member'){                         /// Apabila login sebagai admin
+     $this->load->view('template/navbar_after_login');
+     $this->load->view('template/index', $data);
+   } else if ($data['level'] == "Admin"){                /// Apabila Login sebagai member
+     $this->load->view('template/navbar_after_login');
+     $this->load->view('home', $data);
+   }
  }
  public function obat()
  {

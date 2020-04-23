@@ -19,6 +19,7 @@
         color : white;
         font-weight: bolder;
     }
+    
 
 </style>
 
@@ -26,10 +27,11 @@
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <ul class="nav navbar-nav">
-                <li><img class="image" src="<?php echo base_url(); ?>logo.jpg" width="60px" style="padding:15px"><b><a href="<?=base_url('home')?>">PETCARE GROUPS</a></b></li>              
+                <li><img class="image" src="<?php echo base_url(); ?>logo.jpg" width="60px" style="padding:15px"><b><a>PETCARE GROUPS</a></b></li>              
             </ul>
             <div class="navbar_menu">
                 <ul class="menu">
+                    <li><a href="<?= base_url('home'); ?>" class="btn btn-xs btn-primary text-uppercase"><font color="white">Home</font></a></li>
                     <li><a href="<?= site_url('editprofile') ?>" class="btn btn-xs btn-primary text-uppercase">Edit Profile</a></li>
                     <li><a class="btn btn-xs btn-danger text-uppercase" href="<?= base_url()?>home/logout">logout</a></center></li>
                 </ul>
