@@ -61,7 +61,7 @@
         
         <a class="btn btn-primary" href="<?= base_url('home/obat')?>"><font color="white"><b>OBAT</b></font-color></a>
         <a class="btn btn-primary" href="<?= base_url('home/makanan')?>"><font color="white"><b>MAKANAN</b></font-color></a>
-        <a class="btn btn-primary" href="#"><font color="white"><b>HISTORY TRANSAKSI</b></font-color></a>
+        <a class="btn btn-primary" href="<?= base_url('History')?>"><font color="white"><b>HISTORY TRANSAKSI</b></font-color></a>
         <a class="btn btn-primary" href="<?= base_url('home/tfsaldo')?>"><font color="white"><b>TRANSER SALDO</b></font-color></a>
 
         <div class="infoakun">

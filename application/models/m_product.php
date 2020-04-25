@@ -75,5 +75,28 @@ class m_product extends CI_Model{
 	{
 	    $this->db->where('id_makanan', $id_makanan);
         return $this->db->delete('makanan');
-	}
+    }
+    public function buy_makanan($username){
+        $data = [
+            'id_transaksi' => '',
+            'username' => $username,
+            'product' => $this->input->post('namaproduk'),
+            'jenis' => "Makanan",
+            'jumlah' => $this->input->post('jumlah', true),
+            'total_transaksi' => $this->input->post('total')
+        ];
+        return $this->db->insert('transaksi', $data);
+
+    }
+    public function buy_obat($username){
+        $data = [
+            'id_transaksi' => '',
+            'username' => $username,
+            'product' => $this->input->post('namaproduk'),
+            'jenis' => "Obat",
+            'jumlah' => $this->input->post('jumlah', true),
+            'total_transaksi' => $this->input->post('total')
+        ];
+        return $this->db->insert('transaksi', $data);
+    }
 }

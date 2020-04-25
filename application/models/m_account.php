@@ -37,6 +37,27 @@ class m_account extends CI_Model{
 			return false;
 		}
 	}
+	public function history($username){
+		$this->db->select('product');
+		$this->db->select('jenis');
+		$this->db->select('jumlah');
+		$this->db->select('total_transaksi');
+		$this->db->from('transaksi');
+		$this->db->where('username',$username);
+		$query = $this->db->get();
+		return $query->result_array();
+	}
+	public function history_all(){
+		$this->db->select('username');
+		$this->db->select('product');
+		$this->db->select('jenis');
+		$this->db->select('jumlah');
+		$this->db->select('total_transaksi');
+		$this->db->from('transaksi');
+		$query = $this->db->get();
+		return $query->result_array();
+	}
+
 	public function check_username($username){
 		$query = $this->db->where('username',$username)->get('user');
 		$count = $query->num_rows();
@@ -59,5 +80,4 @@ class m_account extends CI_Model{
 		$this->db->where('username', $username);
 		return $this->db->update('user', $data);
 	}
-	
 }
